@@ -1,34 +1,53 @@
+import java.util.*;
 class TissueBox
 {
-	public void print()
+	private int capacity;
+	private String color;
+
+	TissueBox(int capacity,String color)
 	{
-	System.out.println("This is Tissue box");
+	this.capacity=capacity;
+	this.color=color;
 	}
+
+	public int getCapacity()
+	{
+	return this.capacity;
+	}
+   public String getColor()
+		{
+		return this.color;
+		}
 }
 
 class  Tissue
 {
-	private int no_of_tissues;
-
-	Tissue(int t)
+	private String color;
+	private String material;
+	Tissue(String color,String material)
 	{
-	no_of_tissues=t;
+	this.color=color;
+	this.material=material;
 	}
-
-	public int get()
+	public String getColor()
 	{
-	return no_of_tissues;
+	return this.color;
 	}
+	public String getMaterial()
+	{
+	return this.material;
+	}
+	
 }
 
 public class Composition
 {
 	public static void main(String[] args) 
 	{
-	TissueBox t1=new TissueBox();
-	t1.print();
-	Tissue t=new Tissue(10);
+	TissueBox t1=new TissueBox(20,"Blue");
+	System.out.println(t1.getColor()+" TissueBox has a "+t1.getCapacity()+" Tissues");
 
-	System.out.println("TissueBox has a "+t.get()+" Tissues");
+	Tissue t=new Tissue("White","Paper");
+	System.out.println(t1.getColor()+" TissueBox has a "+t1.getCapacity()+" "+t.getColor()+" Tissues "+" and they are made from "+t.getMaterial());
 	}
 }
